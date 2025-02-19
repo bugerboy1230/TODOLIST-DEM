@@ -30,11 +30,11 @@ function render() {
     let resultHTML = '';
     for(let i=0;i<taskList.length;i++){
         if(taskList[i].isComplete == true){        
-            resultHTML += `<div class="task">
+            resultHTML += `<div class="task" style="background-color: gray;">
                 <div class="task-done">${taskList[i].taskContent}</div>
                 <div>
-                    <button onclick="toggleComplete('${taskList[i].id}')">Check</button>
-                    <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
+                    <button onclick="toggleComplete('${taskList[i].id}')"><i class="fas fa-undo fa-lg"></i></button>
+                    <button onclick="deleteTask('${taskList[i].id}')"><i class="fas fa-trash fa-lg"></i></button>
                 </div>
             </div>`;
         }
@@ -42,8 +42,8 @@ function render() {
         resultHTML += `<div class="task">
                 <div>${taskList[i].taskContent}</div>
                 <div>
-                    <button onclick="toggleComplete('${taskList[i].id}')">Check</button>
-                    <button onclick="deleteTask('${taskList[i].id}')">Delete</button>
+                    <button onclick="toggleComplete('${taskList[i].id}')"><i class="fas fa-check fa-lg"></i></button>
+                    <button onclick="deleteTask('${taskList[i].id}')"><i class="fas fa-trash fa-lg"></i></button>
                 </div>
             </div>`;
         }
@@ -55,7 +55,7 @@ function toggleComplete(id) {
     console.log("id:", id);
     for(let i=0;i<taskList.length;i++){
         if(taskList[i].id == id){
-            taskList[i].isComplete= !taskList[i].isComplete; //현재 가지고 있는 값의 반대값을 가지고 오는 기술
+            taskList[i].isComplete= !taskList[i].isComplete;
             break;
         }
     }
