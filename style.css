@@ -1,44 +1,164 @@
-body{
-    margin:0;
-    background-image: url("images/background.jpg");
+body {
+    margin: 0;
+    background-image: url("images/background.jfif");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: "Rajdhani", sans-serif;
+    color: #333;
 }
 
-
-.container{
-    background-color: white;
+.container {
+    background-color: #f9f9f9;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+    max-width: 800px;
+    border-top: 10px solid #e0e0e0;
+    border-bottom: 10px solid #e0e0e0;
+    height: 100%;
     min-height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.task-area{
-    border:1px solid lightgray;
-    margin-top: 2em;
-}
-.task-tabs{
-    display: flex;
-    border-bottom: 1px solid lightgray;
-    position:relative;
-}
-.task-tabs div{
-    padding:1em;
 }
 
-#under-line{
-    height: 4px;
-    background-color: pink;
+.input-area {
+    position: relative;
+}
+
+.task-input {
+    transition: padding-top 0.2s ease, margin-top 0.2s ease;
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.task-input:focus {
+    outline: none;
+    border-bottom: 2px solid #333;
+    padding-top: 35px;
+    background-color: #fff;
+}
+
+.task-input + label > span {
+    font-weight: 300;
+    margin: 0;
     position: absolute;
-    width: 80px;
-    left: 0px;
+    color: #8f8f8f;
+    font-size: 14px;
+    top: 6px;
+    left: 10px;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+.task-input:focus + label > span {
+    top: 0px;
+    color: #333;
+}
+
+.button-add {
+    border: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-add:hover {
+    background-color: #555;
+}
+
+.button-add:active {
+    background-color: #777;
+    box-shadow: -1px 2px 5px rgba(0, 0, 0, 0.15),
+      0px 1px 1px rgba(0, 0, 0, 0.15);
+    transform: translateY(0.125rem);
+}
+
+.task-list-container {
+    border: 1px solid #e0e0e0;
+    margin-top: 1em;
+    position: relative;
+    background-color: #fff;
+}
+
+.tab-type {
+    display: flex;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-type div {
+    padding: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab-type div:hover {
+    background-color: #f0f0f0;
+}
+
+#tab-underline {
+    background-color: #333;
+    height: 4px !important;
+    position: absolute;
     top: 52px;
+    left: 0px;
+    width: 48px;
+    transition: 0.5s;
     padding: 0px;
 }
-.task{
+
+.task {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0;
+    position: relative;
+    background-color: #fff;
+}
+
+.task span {
     padding: 1em;
 }
 
-.task-done{
+.button-box {
+    display: flex;
+}
+
+.button-box button {
+    height: 100%;
+    border: none;
+    width: 5em;
+    margin: 0;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.button-box button:active {
+    position: relative;
+    top: 2px;
+}
+
+.button-box button:first-child:hover {
+    background-color: #d4edda;
+}
+
+.button-box button:nth-child(2):hover {
+    background-color: #f8d7da;
+}
+
+.fa-check {
+    color: #28a745;
+}
+
+.fa-trash {
+    color: #dc3545;
+}
+
+.fa-undo-alt {
+    color: #6c757d;
+}
+
+.task-done {
     text-decoration: line-through;
+    background-color: #e9ecef;
+    transition: 0.5s;
 }
